@@ -2,10 +2,10 @@ pipeline {
     
     stages{
         
-        stage('Git Clone or Pull'){
+        stage('Git Checkout'){
             
             steps {
-                git 'https://github.com/asquarezone/spring-petclinic.git'
+                git 'https://github.com/gmajay/design-devops.git'
             }
         }
         
