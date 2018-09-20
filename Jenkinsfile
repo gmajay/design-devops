@@ -2,12 +2,12 @@ pipeline {
 	agent any    
     stages{
         
-        stage('Git Checkout'){
+       /* stage('Git Checkout'){
             
             steps {
                 git 'https://github.com/gmajay/design-devops.git'
             }
-        }
+       / } 
         
         stage('Maven Build'){
             steps{
