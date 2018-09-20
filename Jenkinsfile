@@ -1,6 +1,6 @@
 node {
     stage 'Clone the project'
-    git 'https://github.com/eugenp/tutorials.git'
+    git  'https://github.com/gmajay/design-devops.git'
    
     dir('pipeline-test') {
         stage("Compilation and Analysis") {
