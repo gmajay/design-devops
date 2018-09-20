@@ -1,29 +1,13 @@
-pipeline {
-	agent any    
-    stages{
-        
-       /* stage('Git Checkout'){
-            
-            steps {
-                git 'https://github.com/gmajay/design-devops.git'
+node {
+    stage 'Clone the project'
+    git 'https://github.com/eugenp/tutorials.git'
+   
+    dir('pipeline-test') {
+        stage("Compilation and Analysis") {
+            parallel 'Compilation': {
+                sh "./mvnw clean install"
             }
-       / } 
-        
-        stage('Maven Build'){
-            steps{
-                sh 'mvn clean install'
-            }
-        }
-        
-        stage('Publish'){
-            steps{
-                archiveArtifacts 'target/springboot-petclinic-1.4.1.jar'
-                junit 'target/surefire-reports/*.xml'
-                
-            }
-        }
-    }
-}
-
-
+	  }
+	}
+}	
 
